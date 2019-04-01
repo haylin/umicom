@@ -32,9 +32,9 @@ namespace Umicom.EntityFrameworkCore.Repositories
         /// </summary>
         /// <param name="id">Id</param>
         /// <returns></returns>
-        public User GetWithRoles(Guid id)
+        public async Task<User> GetWithRoles(Guid id)
         {
-            var user = _dbContext.Set<User>().FirstOrDefault(it => it.Id == id);
+            var user = await _dbContext.Set<User>().FirstOrDefaultAsync(it => it.Id == id);
             if (user != null)
             {
                 user.UserRoles = _dbContext.Set<UserRole>().Where(it => it.UserId == id).ToList();

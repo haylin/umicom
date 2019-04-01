@@ -17,6 +17,6 @@ namespace Umicom.Domain.IRepositories
         /// <returns>存在返回用户实体，否则返回NULL</returns>
         Task<User> CheckUser(string userName, string password);
 
-        User GetWithRoles(Guid id);
+        Task<User> GetWithRoles(Guid id);
     }
 }
