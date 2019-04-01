@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Umicom.Application.MenuApp;
 using Umicom.Application.MenuApp.Dtos;
 using Umicom.Domain.Entities;
@@ -60,16 +61,16 @@ namespace Umicom.Application
         /// </summary>
         /// <param name="userId">用户ID</param>
         /// <returns></returns>
-        public List<MenuDto> GetMenusByUser(Guid userId)
+        public async Task<List<MenuDto>> GetMenusByUser(Guid userId)
         {
             List<MenuDto> result = new List<MenuDto>();
             var allMenus = _menuRepository.GetAllList(it => it.Type == 0).OrderBy(it => it.SerialNumber);
             if (userId == Guid.Empty) //超级管理员
                 return Mapper.Map<List<MenuDto>>(allMenus);
-            var user = _userRepository.GetWithRoles(userId);
+            var user = await _userRepository.GetWithRoles(userId);
             if (user == null)
                 return result;
-            var userRoles = user.UserRoles;
+            var userRoles =  user.UserRoles;
             List<Guid> menuIds = new List<Guid>();
             foreach (var role in userRoles)
             {

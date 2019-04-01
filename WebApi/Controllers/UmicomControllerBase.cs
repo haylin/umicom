@@ -8,6 +8,7 @@ namespace WebApi.Controllers
         /// 获取服务端验证的第一条错误信息
         /// </summary>
         /// <returns></returns>
+        [HttpPost("GetModelStateError")]
         public string GetModelStateError()
         {
             foreach (var item in ModelState.Values)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Umicom.Application.MenuApp.Dtos;
 
 namespace Umicom.Application.MenuApp
@@ -22,7 +23,7 @@ namespace Umicom.Application.MenuApp
         /// <returns></returns>
         List<MenuDto> GetMneusByParent(Guid parentId, int startPage, int pageSize, out int rowCount);
 
-        List<MenuDto> GetMenusByUser(Guid userId);
+       Task<List<MenuDto>> GetMenusByUser(Guid userId);
 
         /// <summary>
         /// 新增或修改功能
