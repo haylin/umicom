@@ -107,7 +107,8 @@ namespace WebApi
             app.UseSwaggerUI(c =>
             {
                
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "UmicomCms API V1.0");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1.0");
+                
                 c.ShowExtensions();
                 
 
