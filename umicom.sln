@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umicom.EntityFrameworkCore"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umicom.Utility", "Umicom.Utility\Umicom.Utility.csproj", "{5F2CA1C6-AFE6-44BD-9E7B-3D9748982B16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umicom.Passport", "Umicom.Passport\Umicom.Passport.csproj", "{A8C4AE33-E493-4B91-B17B-BD02C466BB3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5F2CA1C6-AFE6-44BD-9E7B-3D9748982B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F2CA1C6-AFE6-44BD-9E7B-3D9748982B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F2CA1C6-AFE6-44BD-9E7B-3D9748982B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8C4AE33-E493-4B91-B17B-BD02C466BB3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8C4AE33-E493-4B91-B17B-BD02C466BB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8C4AE33-E493-4B91-B17B-BD02C466BB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8C4AE33-E493-4B91-B17B-BD02C466BB3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
