@@ -39,8 +39,6 @@ namespace Umicom.Domain.IRepositories
         /// <returns></returns>
         TEntity Get(TPrimaryKey id);
 
-       
-
         /// <summary>
         /// 根据lambda表达式条件获取单个实体
         /// </summary>

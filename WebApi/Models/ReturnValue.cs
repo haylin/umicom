@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace WebApi.Models
+﻿namespace WebApi.Models
 {
     public class ReturnValue
     {
@@ -14,8 +9,6 @@ namespace WebApi.Models
         ///   <c>true</c> 成功：错误信息为NULL，失败错误输出错误信息。 <c>false</c>.
         /// </value>
         public bool IsSuccess { get; set; }
-
-  
 
         public int ReturnCode { get; set; }
         public string ReturnMsg { get; set; }

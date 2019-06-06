@@ -47,7 +47,5 @@ namespace Umicom.Application.DepartmentApp
         /// <param name="id">Id</param>
         /// <returns></returns>
         DepartmentDto Get(Guid id);
-
-       
     }
 }

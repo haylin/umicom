@@ -1,8 +1,7 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using AutoMapper;
 using Umicom.Application.RoleApp.Dtos;
 using Umicom.Domain.Entities;
 using Umicom.Domain.IRepositories;
@@ -17,6 +16,7 @@ namespace Umicom.Application.RoleApp
         {
             _repository = roleRepository;
         }
+
         /// <summary>
         /// 删除
         /// </summary>
@@ -54,7 +54,7 @@ namespace Umicom.Application.RoleApp
         /// <exception cref="NotImplementedException"></exception>
         public List<RoleDto> GetAllList()
         {
-            return Mapper.Map<List<RoleDto>>(_repository.GetAllList().OrderBy(x=>x.Code));
+            return Mapper.Map<List<RoleDto>>(_repository.GetAllList().OrderBy(x => x.Code));
         }
 
         /// <summary>

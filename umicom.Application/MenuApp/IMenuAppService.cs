@@ -23,7 +23,7 @@ namespace Umicom.Application.MenuApp
         /// <returns></returns>
         List<MenuDto> GetMneusByParent(Guid parentId, int startPage, int pageSize, out int rowCount);
 
-       Task<List<MenuDto>> GetMenusByUser(Guid userId);
+        Task<List<MenuDto>> GetMenusByUser(Guid userId);
 
         /// <summary>
         /// 新增或修改功能

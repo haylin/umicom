@@ -22,7 +22,7 @@ namespace Umicom.Application
         /// 构造函数 实现依赖注入
         /// </summary>
         /// <param name="userRepository">仓储对象</param>
-        public MenuAppService(IMenuRepository menuRepository, IUserRepository userRepository,IRoleRepository roleRepository)
+        public MenuAppService(IMenuRepository menuRepository, IUserRepository userRepository, IRoleRepository roleRepository)
         {
             _menuRepository = menuRepository;
             _userRepository = userRepository;
@@ -70,11 +70,11 @@ namespace Umicom.Application
             var user = await _userRepository.GetWithRoles(userId);
             if (user == null)
                 return result;
-            var userRoles =  user.UserRoles;
+            var userRoles = user.UserRoles;
             List<Guid> menuIds = new List<Guid>();
             foreach (var role in userRoles)
             {
-                 menuIds = menuIds.Union(_roleRepository.GetAllMenuListByRole(role.RoleId)).ToList();
+                menuIds = menuIds.Union(_roleRepository.GetAllMenuListByRole(role.RoleId)).ToList();
             }
             allMenus = allMenus.Where(it => menuIds.Contains(it.Id)).OrderBy(it => it.SerialNumber);
             return Mapper.Map<List<MenuDto>>(allMenus);

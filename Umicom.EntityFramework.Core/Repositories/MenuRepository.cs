@@ -1,6 +1,6 @@
-﻿using Umicom.Domain.Entities;
+﻿using System.Linq;
+using Umicom.Domain.Entities;
 using Umicom.Domain.IRepositories;
-using  System.Linq;
 
 namespace Umicom.EntityFrameworkCore.Repositories
 {
@@ -9,9 +9,10 @@ namespace Umicom.EntityFrameworkCore.Repositories
         public MenuRepository(UmicomContext dbcontext) : base(dbcontext)
         {
         }
+
         public Menu GetObject(string code)
         {
-            return  _dbContext.Set<Menu>().FirstOrDefault(it => it.Code == code);
+            return _dbContext.Set<Menu>().FirstOrDefault(it => it.Code == code);
         }
     }
 }

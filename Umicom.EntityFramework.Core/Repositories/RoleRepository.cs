@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Umicom.Domain.Entities;
 using Umicom.Domain.IRepositories;
 
 namespace Umicom.EntityFrameworkCore.Repositories
 {
-   public class RoleRepository : UmicomRepositoryBase<Role>, IRoleRepository
+    public class RoleRepository : UmicomRepositoryBase<Role>, IRoleRepository
     {
         public RoleRepository(UmicomContext dbcontext) : base(dbcontext)
         {

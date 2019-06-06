@@ -78,8 +78,5 @@ namespace Umicom.Application
         {
             return Mapper.Map<DepartmentDto>(_repository.Get(id));
         }
-
-  
-       
     }
 }

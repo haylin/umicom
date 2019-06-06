@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace Umicom.Application.RoleApp.Dtos
 {
-   public class RoleDto
+    public class RoleDto
     {
         public Guid Id { get; set; }
 

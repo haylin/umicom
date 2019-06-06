@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Umicom.Domain.Entities;
 
 namespace Umicom.Domain.IRepositories

@@ -80,9 +80,9 @@ namespace Umicom.Passport
                      },
                      RequireConsent =true,                                  //用户选择同意认证授权
                      //指定允许的URI返回令牌或授权码(我们的客户端地址)
-                     RedirectUris = { $"http://{Configuration["Clients:MvcClient:IP"]}:{Configuration["Clients:MvcClient:Port"]}/signin-oidc" },
+                     RedirectUris = { $"http://{Configuration["Clients:MVC_Client:IP"]}:{Configuration["Clients:MVC_Client:Port"]}/signin-oidc" },
                      //注销后重定向地址 参考https://identityserver4.readthedocs.io/en/release/reference/client.html                     
-                     PostLogoutRedirectUris = { $"http://{Configuration["Clients:MvcClient:IP"]}:{Configuration["Clients:MvcClient:Port"]}/signout-callback-oidc" },                    
+                     PostLogoutRedirectUris = { $"http://{Configuration["Clients:MVC_Client:IP"]}:{Configuration["Clients:MVC_Client:Port"]}/signout-callback-oidc" },                    
                      LogoUri="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3298365745,618961144&fm=27&gp=0.jpg",
                      // scopes that client has access to
                      AllowedScopes = {                       //客户端允许访问个人信息资源的范围
