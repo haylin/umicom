@@ -29,7 +29,7 @@ namespace Umicom.Passport
                 .AddDeveloperSigningCredential()
                 .AddSigningCredential(new X509Certificate2(Path.Combine(basePath,Configuration["Certificates:CerPath"]),Configuration["Certificates:Password"]))
                 .AddInMemoryIdentityResources(InMemoryConfiguration.GetIdentityResources())
-                .AddTestUsers(InMemoryConfiguration.GetUsers().ToList())
+                .AddTestUsers(InMemoryConfiguration.GetUsers().ToList())                
                 .AddInMemoryClients(InMemoryConfiguration.GetClients())
                 .AddInMemoryApiResources(InMemoryConfiguration.GetApiResources());
             //启动快速启动UI
@@ -43,7 +43,7 @@ namespace Umicom.Passport
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseIdentityServer();
             // for QuickStart-UI
             app.UseStaticFiles();

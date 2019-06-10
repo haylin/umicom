@@ -40,8 +40,9 @@ namespace Umicom.Passport
                       //输出日志记录到文件                      
                       .WriteTo.File($"{AppDomain.CurrentDomain.BaseDirectory}\\logs\\{DateTime.Now:yyyyMMdd}_log.txt")
                      //输出到控制台界面
-                      .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}", theme: AnsiConsoleTheme.Literate);
-              })
+                      .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}", theme: AnsiConsoleTheme.Literate);                  
+              })            
+            .UseUrls("http://*:5000;https://*:50001")
             .Build();
     }
 }
