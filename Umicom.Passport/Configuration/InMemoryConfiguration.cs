@@ -11,6 +11,7 @@ namespace Umicom.Passport
     public class InMemoryConfiguration
     {
         public static IConfiguration Configuration { get; set; }
+
         /// <summary>
         /// Define which APIs will use this IdentityServer
         /// </summary>
@@ -44,6 +45,7 @@ namespace Umicom.Passport
                 {
                     ClientId = "product.api.service",
                     ClientSecrets = new [] { new Secret("productsecret".Sha256()) },
+
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
                     AllowedScopes = new [] { "clientservice", "productservice" }
                 },
@@ -83,8 +85,8 @@ namespace Umicom.Passport
                      RequireConsent =true,                                  //用户选择同意认证授权
                      //指定允许的URI返回令牌或授权码(我们的客户端地址)
                      RedirectUris = { $"http://{Configuration["Clients:MVC_Client:IP"]}:{Configuration["Clients:MVC_Client:Port"]}/signin-oidc" },
-                     //注销后重定向地址 参考https://identityserver4.readthedocs.io/en/release/reference/client.html                     
-                     PostLogoutRedirectUris = { $"http://{Configuration["Clients:MVC_Client:IP"]}:{Configuration["Clients:MVC_Client:Port"]}/signout-callback-oidc" },                    
+                     //注销后重定向地址 参考https://identityserver4.readthedocs.io/en/release/reference/client.html
+                     PostLogoutRedirectUris = { $"http://{Configuration["Clients:MVC_Client:IP"]}:{Configuration["Clients:MVC_Client:Port"]}/signout-callback-oidc" },
                      LogoUri="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3298365745,618961144&fm=27&gp=0.jpg",
                      // scopes that client has access to
                      AllowedScopes = {                       //客户端允许访问个人信息资源的范围
@@ -94,7 +96,6 @@ namespace Umicom.Passport
                          IdentityServerConstants.StandardScopes.Address,
                          IdentityServerConstants.StandardScopes.Phone,
                          IdentityServerConstants.StandardScopes.OfflineAccess
-
                      },
                     AccessTokenLifetime = 30, // one hour
                     UpdateAccessTokenClaimsOnRefresh=true,
@@ -116,7 +117,29 @@ namespace Umicom.Passport
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,                     
+                        IdentityServerConstants.StandardScopes.Profile,
+                    },
+                    AllowOfflineAccess = true
+                },
+              new Client
+                {
+                    ClientId = "mvc",
+                    ClientName = "MVC 客户端",
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+
+                    RedirectUris           = { "http://localhost:5002/signin-oidc" },
+                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "api1"
                     },
                     AllowOfflineAccess = true
                 },

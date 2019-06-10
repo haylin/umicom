@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using IdentityModel;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -45,6 +46,7 @@ namespace Umicom.Passport
             }
             
             app.UseIdentityServer();
+      
             // for QuickStart-UI
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
