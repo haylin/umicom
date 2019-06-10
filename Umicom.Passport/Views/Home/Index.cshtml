@@ -1,10 +1,13 @@
+﻿@{
+    var version = typeof(IdentityServer4.Hosting.IdentityServerMiddleware).Assembly.GetName().Version.ToString();
+}
 <div class="welcome-page">
     <div class="row page-header">
         <div class="col-sm-10">
             <h1>
                 <img class="icon" src="~/icon.jpg">
                 Welcome to IdentityServer4
-                @*<small>(build {version})</small>*@
+                <sup><small>build @version</small></sup>
             </h1>
         </div>
     </div>
@@ -12,23 +15,23 @@
     <div class="row">
         <div class="col-sm-8">
             <p>
-                IdentityServer publishes a
-                <a href="~/.well-known/openid-configuration">discovery document</a>
-                where you can find metadata and links to all the endpoints, key material, etc.
+                IdentityServer 发布的
+                <a href="~/.well-known/openid-configuration">配置</a>
+                可以在其中查找元数据以及指向所有端点，密钥材料等的链接。
             </p>
         </div>
         <div class="col-sm-8">
             <p>
-                Click <a href="~/grants">here</a> to manage your stored grants.
+                单击<a href="~/grants">此处</a> 管理存储的授权。
             </p>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-8">
             <p>
-                Here are links to the
-                <a href="https://github.com/identityserver/IdentityServer4">source code repository</a>,
-                and <a href="https://github.com/identityserver/IdentityServer4.Samples">ready to use samples</a>.
+                以下是
+                <a href="https://github.com/identityserver/IdentityServer4">源代码存储</a>
+                和 <a href="https://github.com/identityserver/IdentityServer4.Samples">演示示例</a>.
             </p>
         </div>
     </div>

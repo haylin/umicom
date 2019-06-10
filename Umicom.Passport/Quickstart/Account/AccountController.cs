@@ -234,7 +234,7 @@ namespace Umicom.Passport.Quickstart.UI
                 // this is meant to short circuit the UI and only trigger the one external IdP
                 return new LoginViewModel
                 {
-                    EnableLocalLogin = false,
+                    EnableLocalLogin = true,
                     ReturnUrl = returnUrl,
                     Username = context?.LoginHint,
                     ExternalProviders = new ExternalProvider[] { new ExternalProvider { AuthenticationScheme = context.IdP } }
@@ -274,7 +274,8 @@ namespace Umicom.Passport.Quickstart.UI
                 EnableLocalLogin = allowLocal && AccountOptions.AllowLocalLogin,
                 ReturnUrl = returnUrl,
                 Username = context?.LoginHint,
-                ExternalProviders = providers.ToArray()
+                ExternalProviders = providers.ToArray(),
+                
             };
         }
 

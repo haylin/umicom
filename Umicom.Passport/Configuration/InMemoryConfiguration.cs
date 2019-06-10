@@ -1,8 +1,10 @@
-﻿using IdentityServer4;
+﻿using IdentityModel;
+using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace Umicom.Passport
 {
@@ -132,20 +134,23 @@ namespace Umicom.Passport
                 new TestUser
                 {
                     SubjectId = "10001",
-                    Username = "edison@hotmail.com",
-                    Password = "edisonpassword"
+                    Username = "test001",
+                    Password = "test001",
+                    Claims =new List<Claim>{ new Claim( JwtClaimTypes.Role,"superadmin") }
                 },
                 new TestUser
                 {
                     SubjectId = "10002",
-                    Username = "andy@hotmail.com",
-                    Password = "andypassword"
+                    Username = "test002",
+                    Password = "test002",
+                     Claims =new List<Claim>{ new Claim( JwtClaimTypes.Role,"admin") }
                 },
                 new TestUser
                 {
                     SubjectId = "10003",
-                    Username = "leo@hotmail.com",
-                    Password = "leopassword"
+                    Username = "test003",
+                    Password = "test003",
+                    Claims =new List<Claim>{ new Claim( JwtClaimTypes.Role,"user") }
                 }
             };
         }

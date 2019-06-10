@@ -20,6 +20,6 @@ namespace Umicom.Passport.Quickstart.UI
         // if user uses windows auth, should we load the groups from windows
         public static bool IncludeWindowsGroups = false;
 
-        public static string InvalidCredentialsErrorMessage = "Invalid username or password";
+        public static string InvalidCredentialsErrorMessage = "用户名或者密码不匹配";
     }
 }
