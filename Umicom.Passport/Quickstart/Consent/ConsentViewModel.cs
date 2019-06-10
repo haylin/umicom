@@ -5,6 +5,7 @@
 using System.Collections.Generic;
 
 namespace Umicom.Passport.Quickstart.UI
+{ 
     public class ConsentViewModel : ConsentInputModel
     {
         public string ClientName { get; set; }

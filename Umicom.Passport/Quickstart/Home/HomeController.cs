@@ -1,5 +1,3 @@
-// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
 using IdentityServer4.Services;
@@ -35,13 +33,13 @@ namespace Umicom.Passport.Quickstart.UI
         }
 
         /// <summary>
-        /// Shows the error page
+        /// 显示错误页面
         /// </summary>
         public async Task<IActionResult> Error(string errorId)
         {
             var vm = new ErrorViewModel();
 
-            // retrieve error details from identityserver
+            // 跳转到IdentityServer错误页面.
             var message = await _interaction.GetErrorContextAsync(errorId);
             if (message != null)
             {

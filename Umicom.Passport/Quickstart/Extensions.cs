@@ -6,10 +6,10 @@ namespace Umicom.Passport.Quickstart.UI
     public static class Extensions
     {
         /// <summary>
-        /// Determines whether the client is configured to use PKCE.
+        /// 客户端是否配置为使用PKCE.
         /// </summary>
-        /// <param name="store">The store.</param>
-        /// <param name="client_id">The client identifier.</param>
+        /// <param name="store">存储的证书.</param>
+        /// <param name="client_id">客户端Iid.</param>
         /// <returns></returns>
         public static async Task<bool> IsPkceClientAsync(this IClientStore store, string client_id)
         {
