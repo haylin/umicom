@@ -112,18 +112,19 @@ namespace Umicom.Passport
                     {
                         new Secret("secret".Sha256())
                     },
-                    RedirectUris           = { "http://localhost:5002/signin-oidc" },
-                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+                    RedirectUris           = {  $"http://{Configuration["Clients:MVC_Client:IP"]}:{Configuration["Clients:MVC_Client:Port"]}/signin-oidc"  },
+                    PostLogoutRedirectUris = { $"http://{Configuration["Clients:MVC_Client:IP"]}:{Configuration["Clients:MVC_Client:Port"]}/signout-callback-oidc" } ,
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.OfflineAccess
                     },
                     AllowOfflineAccess = true
                 },
               new Client
                 {
-                    ClientId = "mvc",
+                    ClientId = "mymvc",
                     ClientName = "MVC 客户端",
                     AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
 
@@ -138,8 +139,7 @@ namespace Umicom.Passport
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        "api1"
+                        IdentityServerConstants.StandardScopes.Profile,                       
                     },
                     AllowOfflineAccess = true
                 },
